@@ -30,4 +30,10 @@ defmodule MathFunctionsTest do
     avg = MathFunctions.avg(numbers)
     assert 18.0 == avg
   end
+
+  test "return error when avg is called with empty list" do
+    assert_raise ArgumentError, fn ->
+      MathFunctions.avg([])
+    end
+  end
 end

@@ -6,11 +6,11 @@ defmodule MathFunctions do
   @doc """
   Gets the min value from a list of numbers.
   """
-  def min(numbers) when length(numbers) > 0 do
+  def min(numbers) when is_list(numbers) and length(numbers) > 0 do
     min_value(numbers, hd(numbers))
   end
 
-  def min(numbers) when length(numbers) == 0 do
+  def min(numbers) when is_list(numbers) and length(numbers) == 0 do
     raise ArgumentError, message: "List contains no elements"
   end
 
@@ -21,11 +21,11 @@ defmodule MathFunctions do
   @doc """
   Gets the max value from a list of numbers.
   """
-  def max(numbers) when length(numbers) > 0 do
+  def max(numbers) when is_list(numbers) and length(numbers) > 0 do
     max_value(numbers, hd(numbers))
   end
 
-  def max(numbers) when length(numbers) == 0 do
+  def max(numbers) when is_list(numbers) and length(numbers) == 0 do
     raise ArgumentError, message: "List contains no elements"
   end
 
@@ -36,8 +36,12 @@ defmodule MathFunctions do
   @doc """
   Gets the average value from a list of numbers.
   """
-  def avg(numbers) do
+  def avg(numbers) when is_list(numbers) and length(numbers) > 0  do
     avg(numbers, 0, 0)
+  end
+
+  def avg(numbers) when is_list(numbers) and length(numbers) == 0 do
+    raise ArgumentError, message: "List contains no elements"
   end
 
   defp avg([h|t], length, sum), do: avg(t, length + 1, sum + h)
