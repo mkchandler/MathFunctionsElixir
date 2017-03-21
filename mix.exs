@@ -7,6 +7,7 @@ defmodule MathFunctions.Mixfile do
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     test_coverage: [tool: Coverex.Task, coveralls: true],
      deps: deps()]
   end
 
@@ -28,6 +29,6 @@ defmodule MathFunctions.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:coverex, "~> 1.4.10", only: :test}]
   end
 end
