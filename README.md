@@ -1,6 +1,6 @@
 # MathFunctions
 
-[![Build Status](https://travis-ci.org/mkchandler/MathFunctionsElixir.svg?branch=master)](https://travis-ci.org/mkchandler/MathFunctionsElixir)
+[![Build Status](https://travis-ci.org/mkchandler/MathFunctionsElixir.svg?branch=master)](https://travis-ci.org/mkchandler/MathFunctionsElixir) [![Coverage Status](https://coveralls.io/repos/github/mkchandler/MathFunctionsElixir/badge.svg?branch=master)](https://coveralls.io/github/mkchandler/MathFunctionsElixir?branch=master)
 
 This is a code exercise to implement the following math functions:
 
