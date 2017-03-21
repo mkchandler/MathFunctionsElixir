@@ -36,4 +36,34 @@ defmodule MathFunctionsTest do
       MathFunctions.avg([])
     end
   end
+
+  test "return single mode from list of numbers" do
+    numbers = [1, 2, 2, 2, 3, 3]
+    mode = MathFunctions.mode(numbers)
+    assert mode == [2]
+  end
+
+  test "return multiple modes from list of numbers" do
+    numbers = [1, 2, 2, 2, 3, 3, 3]
+    mode = MathFunctions.mode(numbers)
+    assert mode == [2, 3]
+  end
+
+  test "return error when mode is called with empty list" do
+    assert_raise ArgumentError, fn ->
+      MathFunctions.mode([])
+    end
+  end
+
+  test "get a count of all items in a list" do
+    numbers = [1, 2, 2, 2, 3, 3]
+    count = MathFunctions.count(numbers)
+    assert %{1 => 1, 2 => 3, 3 => 2} == count
+  end
+
+  test "return error when count is called with empty list" do
+    assert_raise ArgumentError, fn ->
+      MathFunctions.count([])
+    end
+  end
 end
