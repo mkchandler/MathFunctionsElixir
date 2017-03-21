@@ -20,4 +20,3 @@ defmodule MathFunctions.Mixfile do
      {:credo, "~> 0.7", only: [:dev, :test]}]
   end
 end
-

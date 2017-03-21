@@ -103,5 +103,4 @@ defmodule MathFunctions do
 
   defp count([h|t], count), do: count(t, Map.update(count, h, 1, &(&1 + 1)))
   defp count([], count), do: count
-
 end
